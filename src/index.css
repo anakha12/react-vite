@@ -1,0 +1,426 @@
+/* =========================
+   Header
+========================= */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 70px;
+    padding: 0 40px;
+
+    background: white;
+    border-bottom: 1px solid #eee;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    width: 110px;
+    height: auto;
+}
+
+.nav-items > ul {
+    display: flex;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.nav-items > ul > li {
+    padding: 10px 15px;
+    margin-left: 5px;
+
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    border-radius: 8px;
+
+    transition: all 0.2s ease;
+}
+
+.nav-items > ul > li:hover {
+    color: #ff5200;
+    background-color: #fff3ed;
+}
+
+
+/* =========================
+   Body
+========================= */
+
+.body {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 40px;
+}
+
+
+/* =========================
+   Search
+========================= */
+
+.search {
+    width: 100%;
+    max-width: 500px;
+
+    padding: 14px 20px;
+    margin-bottom: 30px;
+
+    color: #777;
+    background-color: #f5f5f5;
+
+    border: 1px solid #eee;
+    border-radius: 30px;
+
+    box-sizing: border-box;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.search:hover {
+    background-color: #fff;
+    border-color: #ff5200;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.res-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    width: 100%;
+}
+
+.res-card {
+    width: 100%;
+    padding-bottom: 15px;
+
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.res-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   Restaurant Image
+========================= */
+
+.resto-img {
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   Restaurant Details
+========================= */
+
+.res-card h3 {
+    margin: 15px 15px 8px;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    color: #222;
+}
+
+.res-card h4 {
+    margin: 6px 15px;
+
+    color: #666;
+
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+/* Rating */
+.res-card h4:nth-of-type(1) {
+    color: #168c35;
+    font-weight: 600;
+}
+
+
+/* Delivery time */
+.res-card h4:nth-of-type(2) {
+    color: #555;
+}
+
+
+/* =========================
+   Shimmer Container
+========================= */
+
+.shimmer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    width: 100%;
+}
+
+
+/* =========================
+   Shimmer Card
+========================= */
+
+.shimmer-card {
+    width: 100%;
+    padding-bottom: 20px;
+
+    background: #fff;
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================
+   Shimmer Image
+========================= */
+
+.shimmer-img {
+    width: 100%;
+    height: 180px;
+
+    background: #e5e5e5;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =========================
+   Shimmer Text
+========================= */
+
+.shimmer-title {
+    width: 70%;
+    height: 20px;
+
+    margin: 15px;
+
+    background: #e5e5e5;
+
+    border-radius: 5px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer-line {
+    width: 85%;
+    height: 14px;
+
+    margin: 10px 15px;
+
+    background: #e5e5e5;
+
+    border-radius: 5px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer-line.short {
+    width: 55%;
+}
+
+
+/* =========================
+   Shimmer Animation
+========================= */
+
+.shimmer-img::after,
+.shimmer-title::after,
+.shimmer-line::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: -150%;
+
+    width: 80%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.7),
+        transparent
+    );
+
+    animation: shimmer 1.5s infinite;
+}
+
+
+@keyframes shimmer {
+    100% {
+        left: 150%;
+    }
+}
+/* =========================
+   Filter
+========================= */
+
+.filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+
+.filter-btn {
+    height: 44px;
+
+    padding: 0 22px;
+
+    flex-shrink: 0;
+
+    background-color: #ff5200;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    box-shadow: 0 3px 10px rgba(255, 82, 0, 0.2);
+
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    background-color: #e64a00;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 15px rgba(255, 82, 0, 0.3);
+}
+
+.filter-btn:active {
+    transform: translateY(0);
+}
+/* =========================
+   Search Container
+========================= */
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* =========================
+   Search Input
+========================= */
+
+.search-box {
+    flex: 1;
+
+    width: 100%;
+    height: 44px;
+
+    padding: 0 16px;
+
+    font-size: 15px;
+    color: #333;
+
+    background-color: white;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    outline: none;
+    box-sizing: border-box;
+
+    transition: all 0.2s ease;
+}
+
+.search-box::placeholder {
+    color: #999;
+}
+
+.search-box:focus {
+    border-color: #ff5200;
+
+    box-shadow: 0 0 0 3px rgba(255, 82, 0, 0.1);
+}   
+
+
+/* =========================
+   Search Button
+========================= */
+
+.search-btn {
+    height: 44px;
+
+    padding: 0 22px;
+
+    flex-shrink: 0;
+
+    background-color: #ff5200;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition: all 0.2s ease;
+}
+
+.search-btn:hover {
+    background-color: #e64a00;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 15px rgba(255, 82, 0, 0.25);
+}
+
+.search-btn:active {
+    transform: translateY(0);
+}
